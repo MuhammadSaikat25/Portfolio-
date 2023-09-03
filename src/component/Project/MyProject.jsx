@@ -4,7 +4,7 @@ import TeethDoctor from "./Teeth";
 
 const MyProject = () => {
     return (
-        <div>
+        <div id="project">
             <Car></Car>
             <TeethDoctor></TeethDoctor>
             <PandaRestaurant></PandaRestaurant>

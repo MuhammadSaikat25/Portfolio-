@@ -8,7 +8,7 @@ const Nav = () => {
     return (
         <>
             <nav className="hidden sticky top-0 bg-white z-10 shadow-md lg:flex lg:justify-between p-7 ">
-                <Link to="home" spy={true} smooth={true} offset={-300} duration={500} className="font-bold lg:text-xl">Saikat.dev</Link>
+                <Link to="home" spy={true} smooth={true} offset={-300} duration={500} className="font-bold cursor-pointer lg:text-xl">Saikat <span className="text-rose-500">.dev</span></Link>
                 <div className="font-bold lg:flex gap-10 lg:mr-10 lg:text-xl text-gray-600">
                     <Link className="cursor-pointer" to="home" spy={true} smooth={true} offset={-300} duration={500}>Home</Link>
                     <Link className="cursor-pointer" to="about" spy={true} smooth={true} offset={-300} duration={500}>About</Link>

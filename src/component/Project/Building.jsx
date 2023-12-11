@@ -2,14 +2,14 @@ import buildingImg from "../../assets/building.png";
 import { FaGithub } from "react-icons/fa";
 const Building = () => {
   return (
-    <div className="lg:flex gap-5 e-full lg:w-[90%] lg:mx-auto bg-white shadow-lg rounded-xl p-4 mb-10">
+    <div className="flex flex-col lg:flex-row gap-5 mx-auto lg:w-[90%] shadow-lg rounded-xl bg-white p-4 mb-10">
       <img
         className=" shadow p-3 object-fill rounded-xl lg:w-[500px] "
         src={buildingImg}
         alt="image"
       />
 
-      <div className="w-full lg:w-[50%] h-full p-4">
+      <div className="w-fit  h-full p-4 ">
         <h1 className="text-center font-bold">
           <span className="text-blue-600">Building</span> Management
         </h1>

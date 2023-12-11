@@ -10,8 +10,8 @@ const MyProject = () => {
         <h1 className="text-blue-600 font-bold mb-6"> PORTFOLIO</h1>
       </div>
       <Building></Building>
-      <TeethDoctor></TeethDoctor>
-      <PandaRestaurant></PandaRestaurant>
+      {/* <TeethDoctor></TeethDoctor> */}
+      {/* <PandaRestaurant></PandaRestaurant> */}
     </div>
   );
 };

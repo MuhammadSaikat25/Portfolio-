@@ -1,41 +1,82 @@
-import { BiSolidLocationPlus } from 'react-icons/bi';
-import { HiOutlineMailOpen } from 'react-icons/hi';
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
-    return (
-        <div id="contact" className="max-w-7xl mx-auto p-6 lg:p-20 space-y-8">
-            <h1 className="text-center text-2xl font-bold text-blue-600 lg:text-left">CONTACT</h1>
-            <p className=" text-center text-3xl lg:text-3xl lg:text-start font-semibold ">Don't be shy! Hit me up! 👇</p>
+  const form = useRef();
 
-            <div className="hidden lg:flex gap-20">
-                <div className="font-bold text-center lg:text-start flex">
-                    <BiSolidLocationPlus className='bg-slate-100 p-2 items-center shadow-lg rounded-full mt-3 ' color='blue' size={50}></BiSolidLocationPlus>
-                    <h1 className='p-1 text-2xl'>Location <br /> Dhaka, Bangladesh</h1>
-                </div>
-                <div className="hidden lg:flex gap-4">
-                    <div className="font-bold text-center flex lg:text-start">
-                        <HiOutlineMailOpen className='bg-slate-100 p-2 items-center shadow-lg rounded-full mt-3 ' color='blue' size={50}></HiOutlineMailOpen>
-                        <h1 className='p-1 text-2xl'>Mail <br /> smsaikat000@gmail.com</h1>
-                    </div>
-                </div>
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    const message = e.target.message.value;
+    if (!message) {
+      return toast("please provide message");
+    }
+
+    emailjs
+      .sendForm(
+        "service_yuteixv",
+        "template_bq9rhce",
+        form.current,
+        "o7byLuzhJi2mqrUdV"
+      )
+      .then(
+        (result) => {
+          toast("Message successfully send");
+        },
+        (error) => {}
+      );
+  };
+  return (
+    <div id="contact" className="flex justify-center mx-auto items-center  py-10">
+      <div className="lg:w-[70%] p-5">
+        <h1 className="text-center text-blue-700 font-bold lg:text-3xl">
+          Send me a Message!
+        </h1>
+        <ToastContainer />
+        <form className="" ref={form} onSubmit={sendEmail}>
+          <div className="flex items-center gap-5">
+            <div className="w-full">
+              <br />
+              <input
+                className="border-b w-full"
+                type="text"
+                name="user_name"
+                placeholder="Your Name"
+                required
+              />
             </div>
-
-
-            <div className=" lg:hidden ">
-                <div className="">
-                    <BiSolidLocationPlus className='bg-slate-100 p-2 mx-auto shadow-lg rounded-full mt-3' color='blue' size={50}></BiSolidLocationPlus>
-                    <h1 className=' text-center'>Location <br /> Dhaka, Bangladesh</h1>
-                </div>
-                <div className="mt-5">
-                    <div className="flex flex-col justify-center">
-                        <HiOutlineMailOpen className='bg-slate-100 p-2 mx-auto shadow-lg rounded-full mt-3 ' color='blue' size={50}></HiOutlineMailOpen>
-                        <h1 className=' text-center'>Mail <br /> smsaikat000@gmail.com</h1>
-                    </div>
-                </div>
+            <div className="w-full">
+              <br />
+              <input
+                type="email"
+                className="w-full border-b"
+                name="user_email"
+                placeholder="Enter your Email"
+                required
+              />
             </div>
-
-        </div>
-    );
+          </div>
+          <div className="w-full mt-5">
+            <textarea
+              name="message"
+              className="w-full border-b"
+              placeholder="Message"
+            />
+          </div>
+          <div className="flex justify-center mt-3">
+            <button
+              className="bg-blue-600 text-white px-10 py-2 rounded w-fit mx-auto"
+              type="submit"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default Contact;

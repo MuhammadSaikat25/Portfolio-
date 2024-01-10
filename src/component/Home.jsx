@@ -24,14 +24,16 @@ const Home = () => {
           <p className="text-xl text-center lg:text-left">
             Hi, I'm Muhammad Saikat. A passionate Front-end React
             <br />
-            Developer based in Dhaka, Bangladesh.{" "}
+            Developer based in Dhaka, Bangladesh.
           </p>
           <div className="flex justify-center lg:justify-start items-center gap-5 mt-5">
             <span className="">
               <FaLinkedin size={30}></FaLinkedin>
             </span>
             <span>
-              <FaGithub size={30}></FaGithub>
+              <a href="https://github.com/MuhammadSaikat25" target="_blank">
+                <FaGithub size={30}></FaGithub>
+              </a>
             </span>
             <a href={cv} download>
               <button className="bg-blue-500 text-white font-semibold rounded-md p-1">

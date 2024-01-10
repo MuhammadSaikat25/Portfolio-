@@ -1,7 +1,7 @@
 import Building from "./Building";
 import Car from "./Car";
-import PandaRestaurant from "./Panda";
-import TeethDoctor from "./Teeth";
+import JobPortal from "./JobPortal";
+import TecHouse from "./TecHouse";
 
 const MyProject = () => {
   return (
@@ -9,9 +9,9 @@ const MyProject = () => {
       <div className="text-center">
         <h1 className="text-blue-600 font-bold mb-6"> PORTFOLIO</h1>
       </div>
-      <Building></Building>
+      <JobPortal></JobPortal>
       <Car></Car>
-     
+      <TecHouse></TecHouse>
     </div>
   );
 };

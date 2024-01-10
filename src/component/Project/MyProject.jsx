@@ -1,4 +1,3 @@
-import Building from "./Building";
 import Car from "./Car";
 import JobPortal from "./JobPortal";
 import TecHouse from "./TecHouse";

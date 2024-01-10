@@ -5,8 +5,7 @@ import css from "../assets/css.png";
 import js from "../assets/js.png";
 import react from "../assets/react.png";
 import tailwind from "../assets/tailwind.png";
-import cv from "../assets/Muhammad-Saikat-Resume.pdf";
-import mongodb from "../assets/mongodb.jpg";
+import cv from "../assets/SaikatFrontEndDev.pdf";
 const Home = () => {
   return (
     <header className="bg-slate-100 mt-[1px] py-32">
